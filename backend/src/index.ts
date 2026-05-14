@@ -23,6 +23,11 @@ app.use(cors({
   credentials: true
 }));
 
+app.options('*', cors({
+  origin: true,
+  credentials: true
+}));
+
 // const devOrigions = ['http://localhost:5173']
 // const prodOrigins = ['https://hungerbox.om108.work','https://www.hungerbox.om108.work'];
 
