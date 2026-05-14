@@ -21,7 +21,7 @@ app.use(cookieParser());
 const devOrigions = ['http://localhost:5173']
 const prodOrigins = ['https://hungerbox.online','https://www.hungerbox.online'];
 
-const allowedOrigins = process.env.NODE_ENV === 'production' ? prodOrigins : devOrigions;
+const allowedOrigins = process.env.NODE_ENV === 'production' ? prodOrigins : process.env.CLIENT_URL;
 
 app.use(cors({
     origin: (origin, callback) => {
