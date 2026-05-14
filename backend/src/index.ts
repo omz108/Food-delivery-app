@@ -19,7 +19,7 @@ app.use(json());
 app.use(cookieParser());
 
 const devOrigions = ['http://localhost:5173']
-const prodOrigins = process.env.CLIENT_URL || 'https://hungerbox.om108.work';
+const prodOrigins = ['https://hungerbox.om108.work'];
 
 const allowedOrigins = process.env.NODE_ENV === 'production' ? prodOrigins : devOrigions;
 
