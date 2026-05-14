@@ -18,20 +18,25 @@ const PORT = 3000;
 app.use(json());
 app.use(cookieParser());
 
-const devOrigions = ['http://localhost:5173']
-const prodOrigins = ['https://hungerbox.om108.work','https://www.hungerbox.om108.work'];
-
-const allowedOrigins = process.env.NODE_ENV === 'production' ? prodOrigins : devOrigions;
 app.use(cors({
-    origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-    credentials: true
-}))
+  origin: true,
+  credentials: true
+}));
+
+// const devOrigions = ['http://localhost:5173']
+// const prodOrigins = ['https://hungerbox.om108.work','https://www.hungerbox.om108.work'];
+
+// const allowedOrigins = process.env.NODE_ENV === 'production' ? prodOrigins : devOrigions;
+// app.use(cors({
+//     origin: (origin, callback) => {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//     credentials: true
+// }))
 
 app.get('/foodList', async (req, res) => {
   // console.log('gfgfiygkhgkj')
